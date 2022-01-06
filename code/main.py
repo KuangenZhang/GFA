@@ -116,8 +116,8 @@ if __name__ == '__main__':
     parser.add_argument('--max_epoch', type=int, default=100, metavar='N',
                         help='how many epochs')
     parser.add_argument('--optimizer', type=str, default='adam', metavar='N', help='which optimizer')
-    parser.add_argument('--seed', type=int, default=10, metavar='S',
-                        help='random seed (default: 10)')
+    parser.add_argument('--seed', type=int, default=1, metavar='S',
+                        help='random seed (default: 1)')
 
     args = parser.parse_args()
     args = convert_args_to_bool(args)
@@ -134,12 +134,4 @@ if __name__ == '__main__':
         args.max_epoch = 150
     source_result_text_list = []
     target_result_text_list = []
-    for dataset_name in ['DSADS_feature', 'ENABL3S_feature', 'UTD']:
-        args.dataset = dataset_name
-        source_result_text, target_result_text = main(args)
-        source_result_text_list.append(source_result_text)
-        target_result_text_list.append(target_result_text)
-    for i in range(len(source_result_text_list)):
-        print(source_result_text_list[i])
-        print(target_result_text_list[i])
-
+    main(args)
