@@ -78,6 +78,8 @@ def main(args):
         np.save("{}/loss/loss_dict_all_{}.npy".format(args.result_dir, model_name), loss_dict_all)
     source_result_text = '{}: Mean of test acc in the source domain: {:.1f}%'.format(model_name, 100 * np.mean(acc_s))
     target_result_text = '{}: Mean of test acc in the target domain: {:.1f}%'.format(model_name, 100 * np.mean(acc_t))
+    print(source_result_text)
+    print(target_result_text)
     return source_result_text, target_result_text
 
 def update_loss_dict(loss_dict_all, loss_dict, i):
@@ -114,8 +116,8 @@ if __name__ == '__main__':
     parser.add_argument('--max_epoch', type=int, default=100, metavar='N',
                         help='how many epochs')
     parser.add_argument('--optimizer', type=str, default='adam', metavar='N', help='which optimizer')
-    parser.add_argument('--seed', type=int, default=1, metavar='S',
-                        help='random seed (default: 1)')
+    parser.add_argument('--seed', type=int, default=10, metavar='S',
+                        help='random seed (default: 10)')
 
     args = parser.parse_args()
     args = convert_args_to_bool(args)
