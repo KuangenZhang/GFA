@@ -71,6 +71,8 @@ def main(args):
     if not args.eval_only:
         if not os.path.exists(args.result_dir):
             os.mkdir(args.result_dir)
+        if not os.path.exists('{}/loss'.format(args.result_dir)):
+            os.mkdir('{}/loss'.format(args.result_dir))
         np.savetxt("{}/loss/final_acc_{}.csv".format(args.result_dir, model_name),
                    np.transpose(np.c_[acc_s, acc_t]), delimiter=",")
         np.save("{}/loss/loss_dict_all_{}.npy".format(args.result_dir, model_name), loss_dict_all)
