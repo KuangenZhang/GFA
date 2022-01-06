@@ -11,20 +11,20 @@ pip install -r requirements.txt
 ```
 
 ### Download dataset
-Download the dataset and checkpoint from the link below:
+Download the dataset and checkpoint from the link below and put the zip file under the current filefolder:
 
 ```
-https://alumniubcca-my.sharepoint.com/:f:/g/personal/kuangen_zhang_alumni_ubc_ca/EmYydTnluklBn17qVXnSIWoBvBq0arhyATCaVlYXVs4PhA?e=evB0s7
+https://alumniubcca-my.sharepoint.com/:u:/g/personal/kuangen_zhang_alumni_ubc_ca/EVOszfZcnMJKr4M-MNap5WABiAmMPMcABCG85FQ89Pa-AQ?e=0idLuC
 ```
 
 ### Test
 ```
-python code/main_MCD.py --eval_only True
+python code/main.py
 ```
 
 ### Train
 ```
-python code/main_MCD.py
+python code/main.py --eval_only False
 ```
 
 ## Contact
